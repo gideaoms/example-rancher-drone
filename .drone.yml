@@ -1,6 +1,8 @@
 pipeline:
-  build:
-    image: node:8.9.3
-    commands:
-      - npm install
-      - npm start
+  rancher:
+    image: peloton/drone-rancher
+    url: http://45.32.175.53:8080
+    access_key: ola
+    secret_key: ola
+    service: app/www
+    docker_image: gideaoms/web
