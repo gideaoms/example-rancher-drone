@@ -1,8 +1,18 @@
 pipeline:
+  docker:
+    image: plugins/docker
+    username: gideaoms
+    password: ABCDgideao
+    repo: gideaoms/web
+    tags:
+      - latest
+      - 1.1
   rancher:
     image: peloton/drone-rancher
     url: http://45.32.175.53:8080
     access_key: ola
     secret_key: ola
     service: app/www
-    docker_image: gideaoms/web
+    docker_image: gideaoms/web:latest
+    confirm: true
+    timeout: 45
